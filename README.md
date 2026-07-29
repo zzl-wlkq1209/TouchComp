@@ -29,6 +29,14 @@ QT_DIR=D:\Qt\Qt5.15.2\5.15.2\msvc2019_64
 directory. `QT_DIR` should point to the Qt kit directory that contains
 `include`, `lib`, and `bin`.
 
+## Opening On Another Computer
+
+Install Visual Studio 2019 (or Build Tools) with the C++ desktop workload,
+Qt VS Tools, and the Qt 5.15.2 MSVC 2019 x64 kit. Set `QT_DIR` to that kit's
+directory before opening `TouchComp.sln`. The project uses the Visual Studio
+2019 `v142` toolset and reads the Qt path from `QT_DIR`; it does not depend on
+the original workstation's absolute Qt installation path.
+
 The project also uses the checked-in project libraries under:
 
 ```text

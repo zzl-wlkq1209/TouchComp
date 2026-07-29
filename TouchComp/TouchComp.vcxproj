@@ -20,7 +20,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')"><Import Project="$(QtMsBuild)\qt_defaults.props" /></ImportGroup>
   <PropertyGroup Label="QtSettings">
-    <QtInstallDir>D:\Softwares\2_Research\Qt\5.15.2\msvc2019_64</QtInstallDir>
+    <QtInstallDir>$(QT_DIR)</QtInstallDir>
     <QtToolsPath>$(QtInstallDir)\bin</QtToolsPath>
     <QtModules>core;gui;widgets</QtModules>
   </PropertyGroup>
