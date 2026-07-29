@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EF05329-777C-452C-A58E-AAB9F004395C}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(LocalAppData)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType><PlatformToolset>v142</PlatformToolset><UseOfMfc>Dynamic</UseOfMfc><CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType><PlatformToolset>v142</PlatformToolset><UseOfMfc>Dynamic</UseOfMfc><CharacterSet>Unicode</CharacterSet><UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')"><Import Project="$(QtMsBuild)\qt_defaults.props" /></ImportGroup>
+  <PropertyGroup Label="QtSettings">
+    <QtInstallDir>D:\Softwares\2_Research\Qt\5.15.2\msvc2019_64</QtInstallDir>
+    <QtToolsPath>$(QtInstallDir)\bin</QtToolsPath>
+    <QtModules>core;gui;widgets</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="QtSettings"><QtModules>core;gui;widgets</QtModules><QtBuildConfig>debug</QtBuildConfig><IntDir>$(ProjectDir)x64\TouchCompDebug\</IntDir><OutDir>$(SolutionDir)x64\TouchCompDebug\</OutDir></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="QtSettings"><QtModules>core;gui;widgets</QtModules><QtBuildConfig>release</QtBuildConfig><IntDir>$(ProjectDir)x64\TouchCompRelease\</IntDir><OutDir>$(SolutionDir)x64\TouchCompRelease\</OutDir></PropertyGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"><Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /><Import Project="$(QtMsBuild)\Qt.props" /></ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'"><Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /><Import Project="$(QtMsBuild)\Qt.props" /></ImportGroup>
+  <PropertyGroup><IncludePath>$(ProjectDir)header;$(OPENHAPTICS_DIR)\include;$(OPENHAPTICS_DIR)\utilities\include;$(QT_DIR)\include;%(AdditionalIncludeDirectories);$(IncludePath)</IncludePath><LibraryPath>$(ProjectDir)lib\x64\Release;$(OPENHAPTICS_DIR)\lib;$(OPENHAPTICS_DIR)\lib\x64\Release;$(OPENHAPTICS_DIR)\utilities\lib\x64\Release;$(QT_DIR)\lib;%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath></PropertyGroup>
+  <ItemDefinitionGroup><ClCompile><PrecompiledHeader></PrecompiledHeader><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><MultiProcessorCompilation>true</MultiProcessorCompilation><AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions></ClCompile><Link><AdditionalDependencies>hd.lib;hdu.lib;%(AdditionalDependencies)</AdditionalDependencies><SubSystem>Console</SubSystem><GenerateDebugInformation>true</GenerateDebugInformation></Link></ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="header\HapticSampler.h" />
+    <ClInclude Include="header\SamplingWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\HapticSampler.cpp" />
+    <ClCompile Include="src\SamplingWindow.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')"><Import Project="$(QtMsBuild)\qt.targets" /></ImportGroup>
+</Project>
